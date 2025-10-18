@@ -28,3 +28,17 @@ class CalculatorApp:
             else:
                 btn = tk.Button(root, text=teks, width=5, height=2, font=('Arial', 14), command=lambda t=teks: self.tekan(t))
                 btn.grid(row=baris, column=kolom, padx=5, pady=5)
+    def tekan(self, value):
+        self.entry.insert(tk.END, value)
+    
+    def hapus(self):
+        self.entry.delete(0, tk.END)
+    
+    def calcula(self):
+        try:
+            result = eval(self.entry.get())
+            self.entry.delete(0, tk.END)
+            self.entry.insert(tk.END, str(result))
+        except:
+            self.entry.delete(0, tk.END)
+            self.entry.insert(tk.END, "Error😥")
