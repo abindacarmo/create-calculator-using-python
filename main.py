@@ -1,17 +1,7 @@
-numeru1 = float(input("Hatama numeru1: "))
-operasaun = input("hili operasaun (+, -, *, /): ")
-numeru2 = float(input("Hatama numeru2: "))
+import tkinter as tk
+from ui_calculator import CalculatorApp
 
-if operasaun == "+":
-    result = numeru1 + numeru2
-elif operasaun == "-":
-    result = numeru1 - numeru2
-elif operasaun == "*":
-    result = numeru1 * numeru2    
-else:
-    if numeru2 != 0:
-        result = numeru1 / numeru2
-    else: 
-        print("errorrrrrrr😒")
-
-print(numeru1, " ", operasaun, " ", numeru2, " = ", result)
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = CalculatorApp
+    root.mainloop()
